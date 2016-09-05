@@ -4,9 +4,13 @@ Created on Mon Sep  5 02:07:29 2016
 
 @author: Robinson
 """
-
-numVowels = 0
-for letter in s:
-    if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
-        numVowels += 1
-print("Number of vowels: " + str(numVowels))
+s = 'azcbobobegghakl'
+numBob = 0
+letters = ""
+search = "bob"
+   
+for i in range(len(s)):
+    letters = s[i: i+3]
+    if letters == search:
+        numBob += 1
+print("Number of times bob occurs is: " + str(numBob))
