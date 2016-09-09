@@ -2,23 +2,36 @@
 """
 Created on Fri Sep  9 16:22:28 2016
 
-@author: Robinson
+@author: Damien Robinson
 """
 
 print("Please think of a number between 0 and 100!")
-#initialise the varible for the input to be stored in
-input = " "
 
 #bottom end of the range to guess between
 low = 0
-
 #top end of the range to guess between
 high = 100
 
-#initialise of the number the program will guess as the middle point of the range
-number =  int((high - low)/2)
+#the varible used to tell if we should keep guessing
+guessed =  False
 
-#
-while input != "c":
-    print("Is your secret number " + str(number) + "?")
+#if the guess is not correct then keep guessing
+while not guessed:
+    #Bisectional search
+    guess = (high + low)//2
+    print("Is your secret number " + str(guess)+ "?")
+    user_input = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
+
+    if user_input == "c" or high - low == 1:
+        #guess is correct
+        guessed = True
+    elif user_input == "h":
+        #guess is too high set the top of the search range to be guess
+        high = guess
+    elif user_input == "l":
+        #guess is too low set the bottow of the search range to be guess
+        low = guess
+    else:
+        print("Sorry, I did not understand your input.")
     
+print("Game over. Your secret number was: " + str(guess))
