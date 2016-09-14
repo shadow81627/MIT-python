@@ -18,7 +18,7 @@ def polysum(n, s):
     #calculate area of the polygon
     area = 0.25 * n * s ** 2 / tan(pi / n)
     
-    #calculate perimeter of the polgon then square it
+    #calculate perimeter of the polygon then square it
     perimeter = (s * n) ** 2
     
     #sum of perimeter and area
