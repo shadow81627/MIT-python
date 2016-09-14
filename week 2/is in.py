@@ -15,17 +15,15 @@ def isIn(char, aStr):
     #Find and store the middle point of aStr
     middle = len(aStr) // 2
     
-    if aStr == '':
-        return False
+    #aStr has 1 or None elements
+    if len(aStr) < 1:
+        return aStr == char
     #Base case to test if middle character in aStr and char are the smae
     elif char == aStr[middle]:
-        return aStr == char
-    #Test if char is smaller than middle 
+        return aStr[middle] == char
+    #char is smaller than middle 
     elif char < aStr[middle]:
-        isIn(char, aStr[:middle])
-    #Test if char is bigger than middle
-    elif char > aStr[middle]:
-         isIn(char, aStr[middle+1:])
-    #return False if we could not find the char in aStr
+        return isIn(char, aStr[:middle])
+    #char is bigger than middle
     else:
-        return False
+         return isIn(char, aStr[middle + 1:])
