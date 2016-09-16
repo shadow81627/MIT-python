@@ -2,7 +2,7 @@
 """
 Created on Fri Sep 16 23:08:52 2016
 
-@author: Robinson
+@author: Damien Robinson
 """
 
 def oddTuples(aTup):
@@ -11,4 +11,8 @@ def oddTuples(aTup):
     
     returns: tuple, every other element of aTup. 
     '''
-    # Your Code Here
+    bTup = ()
+    for i in range(len(aTup)):
+        if i % 2 == 0:
+            bTup += (aTup[i],)
+    return bTup
