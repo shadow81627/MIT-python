@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 """
+Calculates the minimum fixed monthly payment needed in order pay off a credit 
+card balance within 12 months.
+
 Created on Fri Sep 16 18:40:02 2016
 
 @author: Damien Robinson
