@@ -11,7 +11,7 @@ def biggest(aDict):
 
     returns: The key with the largest number of values associated with it
     '''
-    result = {'lenght': 0}
+    result = {'key': None, 'lenght': 0}
     for key in aDict.keys():
         if len(aDict[key]) > result['lenght']:
             result['key'] = key
