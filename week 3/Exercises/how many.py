@@ -12,6 +12,6 @@ def how_many(aDict):
     returns: int, how many values are in the dictionary.
     '''
     num = 0
-    for list in aDict:
-        num += len(list)
+    for key in aDict.keys():
+        num += len(aDict[key])
     return num
