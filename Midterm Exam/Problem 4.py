@@ -14,4 +14,10 @@ def closest_power(base, num):
     In case of a tie, return the smaller value.
     Returns the exponent.
     '''
-    # Your code here
+    exponent = 0
+    while base ** exponent < num:
+        exponent += 1
+    if abs(base ** (exponent - 1) -num) > abs(base ** exponent -num):
+        return exponent
+    else:
+        return exponent - 1
