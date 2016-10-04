@@ -15,4 +15,3 @@ def deep_reverse(L):
     for index in range(len(L)-1, -1, -1):
        L[index].reverse()
     L.reverse()
-    return L
