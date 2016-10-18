@@ -200,7 +200,10 @@ def calculateHandlen(hand):
     hand: dictionary (string-> int)
     returns: integer
     """
-    # TO DO... <-- Remove this comment when you code this function
+    lenght = 0
+    for letter in hand:
+        lenght += hand.get(letter, 0)
+    return lenght
 
 
 
