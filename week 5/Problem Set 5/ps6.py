@@ -103,7 +103,29 @@ class Message(object):
                  another letter (string). 
         '''
 
-        pass
+        #dictionary to be retruned
+        dictionary = {}
+
+        #iterate through the uppercase letters of the alphabet
+        for letter in string.ascii_lowercase:
+            #get the position of the letter in the alphabet
+            position = string.ascii_lowercase.index(letter)
+            #get the shifted position
+            position = position - 26 + shift
+            #set the letters shifted letter in the dictioanry
+            dictionary[letter] = string.ascii_lowercase[position]
+
+        #iterate through the lowercase letters of the alphabet
+        for letter in string.ascii_uppercase:
+            #get the position of the letter in the alphabet
+            position = string.ascii_uppercase.index(letter)
+            #get the shifted position
+            position = position - 26 + shift
+            #set the letters shifted letter in the dictioanry
+            dictionary[letter] = string.ascii_uppercase[position]
+
+        return dictionary
+        
         
 
     def apply_shift(self, shift):
@@ -124,7 +146,7 @@ class Message(object):
                 #get the position of the letter in the alphabet
                 position = string.ascii_lowercase.index(letter)
                 #get the shifted position
-                position = position -26 + shift
+                position = position - 26 + shift
                 #add the shifted character to the cipher text
                 cipher += string.ascii_lowercase[position]
                 
@@ -132,7 +154,7 @@ class Message(object):
                 #get the position of the letter in the alphabet 
                 position = string.ascii_uppercase.index(letter)
                 #get the shifted position
-                position = position -26 + shift
+                position = position - 26 + shift
                 #add the shifted character to the cipher text
                 cipher += string.ascii_uppercase[position]
                 
