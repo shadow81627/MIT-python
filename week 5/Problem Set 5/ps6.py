@@ -141,23 +141,10 @@ class Message(object):
              down the alphabet by the input shift
         '''
         cipher = ""
+        dictionary = self.build_shift_dict(shift)
         for letter in self.message_text:
-            if letter in string.ascii_lowercase:
-                #get the position of the letter in the alphabet
-                position = string.ascii_lowercase.index(letter)
-                #get the shifted position
-                position = position - 26 + shift
-                #add the shifted character to the cipher text
-                cipher += string.ascii_lowercase[position]
-                
-            elif letter in string.ascii_uppercase:
-                #get the position of the letter in the alphabet 
-                position = string.ascii_uppercase.index(letter)
-                #get the shifted position
-                position = position - 26 + shift
-                #add the shifted character to the cipher text
-                cipher += string.ascii_uppercase[position]
-                
+            if letter in string.ascii_letters:
+                cipher += dictionary[letter]                
             else:
                 #if the letter isnt in the alphabet then add it to the cipher text
                 cipher += letter
