@@ -272,3 +272,16 @@ print('Actual Output:', plaintext.get_message_text_encrypted())
 ciphertext = CiphertextMessage('jgnnq')
 print('Expected Output:', (24, 'hello'))
 print('Actual Output:', ciphertext.decrypt_message())
+
+def decrypt_story():
+    """
+    Decrypts an encrypted story within the story file
+
+    Returns: a tuple with the shift used to encrypt the story file
+    and decrypted message
+    """
+    story = get_story_string()
+    cipher = CiphertextMessage(story)
+    return cipher.decrypt_message()
+
+print(decrypt_story())
